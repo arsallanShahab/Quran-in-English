@@ -258,6 +258,7 @@ img {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 0 3em;
+  border-bottom: 4px solid rgba(2, 2, 10, 0.05);
 }
 
 #wrapperTwo .header a {
