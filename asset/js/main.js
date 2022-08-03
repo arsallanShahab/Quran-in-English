@@ -21,6 +21,11 @@ startButton.addEventListener("click", () => {
                 flexItem.setAttribute("id", `${data[i].id}`)
                 flexCon.append(flexItem);
 
+                let surahNo = document.createElement('div');
+                surahNo.setAttribute("class","surah-no");
+                surahNo.textContent = data[i].id;
+                flexItem.append(surahNo);
+
                 let surahNameInArabic = document.createElement("p");
                 surahNameInArabic.setAttribute("class", "surahNameInArabic");
                 surahNameInArabic.textContent = `${data[i].name_arabic}`;
@@ -35,7 +40,7 @@ startButton.addEventListener("click", () => {
 
                 let meaning = document.createElement("p");
                 meaning.setAttribute("class", "meaning");
-                meaning.textContent = `meaning: ${data[i].translated_name.name}`;
+                meaning.textContent = `${data[i].translated_name.name.toUpperCase()}`;
                 flexItem.append(meaning);
             }
 
@@ -51,7 +56,7 @@ startButton.addEventListener("click", () => {
                 e.addEventListener("click", () => {
                     loader.classList.add("active");
                     let id = e.getAttribute("id");
-                    let surahNameInEnglish = e.children[0].textContent;
+                    let surahNameInEnglish = e.children[2].textContent;
                     let surahNameInArabic = e.children[1].textContent;
                     axios.get(`https://api.quran.com/api/v4/verses/by_chapter/${id}?language=en&words=true&per_page=25`)
                         .then(response => {
@@ -89,8 +94,9 @@ startButton.addEventListener("click", () => {
 
                             let headingEnglish = document.createElement("p");
                             headingEnglish.setAttribute("class","wrapper-english");
-                            headingEnglish.textContent = `${id}. Surah ${surahNameInEnglish}`;         
+                            headingEnglish.textContent = `${surahNameInEnglish}`;         
                             haedingContainer.append(headingEnglish);
+
                             let headingArabic = document.createElement("p");
                             headingArabic.setAttribute("class","wrapper-arabic");
                             headingArabic.textContent = `${surahNameInArabic}`;
