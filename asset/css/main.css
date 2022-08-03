@@ -327,8 +327,6 @@ img {
   position: relative;
   -webkit-font-smoothing: antialiased;
   text-align: center;
-<<<<<<< HEAD
-=======
   overflow: hidden;
 }
 
@@ -352,25 +350,11 @@ img {
   font-weight: 700;
   color: rgba(71, 22, 219, 0.08);
   z-index: -1;
->>>>>>> c158d92 (updated main.js and main.css)
 }
 
 .flex-item .surahNameInArabic {
   display: block;
   font-family: var(--font-arabic);
-<<<<<<< HEAD
-  font-size: 2em;
-  font-weight: 700;
-  color: #DB162F;
-  padding-bottom: 12px;
-  margin: 0;
-  -webkit-transition: 200ms ease-in-out;
-  transition: 200ms ease-in-out;
-}
-
-.flex-item .surahNameInEnglish {
-  font-size: 1.1em;
-=======
   font-size: 2.2em;
   font-weight: 700;
   color: #4716db;
@@ -382,7 +366,6 @@ img {
 
 .flex-item .surahNameInEnglish {
   font-size: 1em;
->>>>>>> c158d92 (updated main.js and main.css)
   font-weight: 500;
   color: #8a8a8a;
   margin: 0;
