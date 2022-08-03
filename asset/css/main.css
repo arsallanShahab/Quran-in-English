@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600&family=Poppins:wght@500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;700;800&display=swap");
 :root {
   --font-poppins: 'Poppins', sans-serif;
   --font-DM-Sans: 'DM Sans', sans-serif;
@@ -322,36 +322,29 @@ img {
 
 .flex-item {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
 }
 
 .flex-item .surahNameInArabic {
+  display: block;
   font-family: var(--font-arabic);
-  font-size: 1.17em;
-  font-weight: 500;
-  color: #8a8a8a;
+  font-size: 2em;
+  font-weight: 700;
+  color: #DB162F;
+  padding-bottom: 12px;
   margin: 0;
-  text-align: right;
-  -webkit-font-smoothing: antialiased;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
 }
 
 .flex-item .surahNameInEnglish {
   font-size: 1.1em;
-  font-weight: 700;
-  color: #DB162F;
+  font-weight: 500;
+  color: #8a8a8a;
   margin: 0;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
 }
 
 .flex-item .meaning {

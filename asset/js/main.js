@@ -19,17 +19,18 @@ startButton.addEventListener("click", () => {
                 let flexItem = document.createElement("div");
                 flexItem.setAttribute("class", "flex-item");
                 flexItem.setAttribute("id", `${data[i].id}`)
-                flexCon.append(flexItem)
-
-                let surahNameInEnglish = document.createElement("p");
-                surahNameInEnglish.setAttribute("class", "surahNameInEnglish");
-                surahNameInEnglish.textContent = `${i + 1}. ${data[i].name_simple}`;
-                flexItem.append(surahNameInEnglish);
+                flexCon.append(flexItem);
 
                 let surahNameInArabic = document.createElement("p");
                 surahNameInArabic.setAttribute("class", "surahNameInArabic");
                 surahNameInArabic.textContent = `${data[i].name_arabic}`;
                 flexItem.append(surahNameInArabic);
+
+                let surahNameInEnglish = document.createElement("p");
+                surahNameInEnglish.setAttribute("class", "surahNameInEnglish");
+                // surahNameInEnglish.textContent = `${i + 1}. ${data[i].name_simple}`;
+                surahNameInEnglish.textContent = `${data[i].name_simple}`;
+                flexItem.append(surahNameInEnglish);
 
 
                 let meaning = document.createElement("p");
@@ -86,16 +87,14 @@ startButton.addEventListener("click", () => {
                             haedingContainer.setAttribute("class", "heading-container");
                             wrapper.append(haedingContainer);
 
+                            let headingEnglish = document.createElement("p");
+                            headingEnglish.setAttribute("class","wrapper-english");
+                            headingEnglish.textContent = `${id}. Surah ${surahNameInEnglish}`;         
+                            haedingContainer.append(headingEnglish);
                             let headingArabic = document.createElement("p");
                             headingArabic.setAttribute("class","wrapper-arabic");
                             headingArabic.textContent = `${surahNameInArabic}`;
                             haedingContainer.append(headingArabic);
-
-                            let headingEnglish = document.createElement("p");
-                            headingEnglish.setAttribute("class","wrapper-english");
-                            // headingEnglish.textContent = `${id}. Surah ${surahNameInEnglish}`;  
-                            headingEnglish.textContent = ` Surah ${surahNameInEnglish}`;       
-                            haedingContainer.append(headingEnglish);
 
 
                             ///fully-dynamic-////////////////////////////////////////////////////////////
