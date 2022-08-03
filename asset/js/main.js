@@ -86,14 +86,16 @@ startButton.addEventListener("click", () => {
                             haedingContainer.setAttribute("class", "heading-container");
                             wrapper.append(haedingContainer);
 
-                            let headingEnglish = document.createElement("p");
-                            headingEnglish.setAttribute("class","wrapper-english");
-                            headingEnglish.textContent = `${id}. Surah ${surahNameInEnglish}`;         
-                            haedingContainer.append(headingEnglish);
                             let headingArabic = document.createElement("p");
                             headingArabic.setAttribute("class","wrapper-arabic");
                             headingArabic.textContent = `${surahNameInArabic}`;
                             haedingContainer.append(headingArabic);
+
+                            let headingEnglish = document.createElement("p");
+                            headingEnglish.setAttribute("class","wrapper-english");
+                            // headingEnglish.textContent = `${id}. Surah ${surahNameInEnglish}`;  
+                            headingEnglish.textContent = ` Surah ${surahNameInEnglish}`;       
+                            haedingContainer.append(headingEnglish);
 
 
                             ///fully-dynamic-////////////////////////////////////////////////////////////
