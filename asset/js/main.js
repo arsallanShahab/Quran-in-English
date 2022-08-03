@@ -21,6 +21,11 @@ startButton.addEventListener("click", () => {
                 flexItem.setAttribute("id", `${data[i].id}`)
                 flexCon.append(flexItem);
 
+                let surahNo = document.createElement('div');
+                surahNo.setAttribute("class","surah-no");
+                surahNo.textContent = data[i].id;
+                flexItem.append(surahNo);
+
                 let surahNameInArabic = document.createElement("p");
                 surahNameInArabic.setAttribute("class", "surahNameInArabic");
                 surahNameInArabic.textContent = `${data[i].name_arabic}`;
@@ -89,8 +94,9 @@ startButton.addEventListener("click", () => {
 
                             let headingEnglish = document.createElement("p");
                             headingEnglish.setAttribute("class","wrapper-english");
-                            headingEnglish.textContent = `${id}. Surah ${surahNameInEnglish}`;         
+                            headingEnglish.textContent = `${surahNameInEnglish}`;         
                             haedingContainer.append(headingEnglish);
+
                             let headingArabic = document.createElement("p");
                             headingArabic.setAttribute("class","wrapper-arabic");
                             headingArabic.textContent = `${surahNameInArabic}`;
