@@ -1,8 +1,13 @@
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Surahs from "./pages/Surahs";
+
 function App() {
   return (
-    <div className="h-screen w-full flex justify-center items-center text-3xl">
-      React + ViteJs + TailwindCss = :) Lit
-    </div>
+    <Routes>
+      <Route path="/" element={<Home/>} />
+      <Route path="/surahs" element={<Surahs/>} />
+    </Routes>
   );
 }
 
