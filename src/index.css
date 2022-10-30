@@ -20,3 +20,47 @@ body {
 .odd:nth-of-type(2n + 1) {
   background-color: #f3f4f6;
 }
+
+.back-btn:hover {
+  color: var(--data-color-dark);
+}
+
+.active {
+  font-weight: 800;
+}
+
+[class*="loader-"] {
+  display: inline-block;
+  width: 2.5em;
+  height: 2.5em;
+  color: inherit;
+  vertical-align: middle;
+  pointer-events: none;
+}
+
+.loader-03 {
+  border: 0.2em solid currentcolor;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  animation: 1s loader-03 linear infinite;
+  position: relative;
+}
+
+@keyframes loader-03 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-08 {
+  0%,
+  100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}

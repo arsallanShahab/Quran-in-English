@@ -2,7 +2,7 @@ import axios from "axios";
 import React from 'react';
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
-import { primary100, primary200, primary300, primary400, primary50, primary500, primary600, primary700, primary800 } from "../components/colors";
+import { default200, default50, default800, primary200, primary50, primary800 } from "../components/colors";
 
 const fetchSurahs = async()=>{
   const listOfSurahs = axios.get("https://api.quran.com/api/v4/chapters?language=en").then((res)=>res.data)
@@ -12,9 +12,14 @@ const fetchSurahs = async()=>{
 
 
 const Surahs = () => {
-  const { isLoading,isError,data,error,isSuccess } = useQuery("surahs",fetchSurahs);
+  const { isLoading,isError,data,error } = useQuery("surahs",fetchSurahs);
+  const theme = document.body.dataset.theme;
   if (isLoading) {
-    return <div className="flex items-center justify-center h-screen w-screen text-7xl text-center font-semibold"><h2>Loading...</h2></div>;
+    return (<div className="flex items-center justify-center h-screen w-screen text-xl text-center font-semibold">
+    <div className="box">
+      <div className="loader-03"></div>
+    </div>
+  </div>)
   }
   if (isError) {
     return <span>Error: {error.message}</span>;
@@ -23,22 +28,22 @@ const Surahs = () => {
   // console.log(chapters)
 
   return (
-    <div style={{backgroundColor: primary50}} className="pb-20" >
-      <div className="header py-6 px-4">
-        <Link to={"/"} className="font-semibold" > {"<"} back</Link>
-        <h1 className='font-sora font-bold  pt-16 pb-5 text-7xl text-center'>Al Qur'an</h1>
+    <div style={{backgroundColor: default50}} className="pb-20">
+      <div className="header py-3 px-3 lg:py-6 lg:px-6">
+        <Link to={"/"} className="back-btn text-gray-600 inline-block font-semibold px-3 pr-4 py-3 rounded-md duration-200" style={{"--data-color-dark":default800}} > {"<"} back</Link>
+        <h1 className='font-sora font-bold pt-8 lg:pt-16 pb-5 text-4xl lg:text-7xl text-center' style={{color:theme == "default" ? default800 : primary800}}>Al Qur'an</h1>
       </div>
-      <ul className="m-0 px-[4.5em] py-8 flex gap-x-12 text- gap-y-8 flex-wrap justify-center items-start w-full" >
+      <ul className="m-0 px-8 lg:px-[4.5em] py-4 lg:py-8 flex gap-x-12 text- gap-y-8 flex-wrap justify-center items-start w-full" >
       {chapters ? chapters.map((item,index)=>{
         return (
           <li className="group list-none text-center flex-grow basis-[300px]" key={index}> 
-            <Link to={`${item.id}/surah-${item.name_simple.toLowerCase()}`} style={{borderColor: primary200}} className={`relative flex flex-row gap-3 items-center justify-start  px-4 py-4 rounded-2xl border-[1px] group-hover:-translate-y-2 group-hover:shadow-lg shadow-current duration-200`}>
-              <span style={{backgroundColor:primary200,color:primary800}} className={`py-4 px-6 rounded-xl text-xl font-bold duration-200`}>{item.id} </span>
+            <Link to={`${item.id}/surah-${item.name_simple.toLowerCase()}`} style={{borderColor: theme == "default" ? default200 : primary200}} className={`relative bg-white flex flex-row gap-3 items-center justify-start p-3  lg:p-4 rounded-2xl border-[1px] group-hover:-translate-y-2 group-hover:shadow-lg shadow-current duration-200`}>
+              <span style={{backgroundColor:theme == "default" ? default200 : primary200,color:theme == "default" ? default800 : primary800}} className={`py-3 px-5 lg:py-4 lg:px-6 rounded-xl text-base lg:text-xl font-bold duration-200`}>{item.id} </span>
               <div className="flex flex-col justify-center-center text-left z-10">
-                <span className={`text-base font-semibold font-sora group-hover:text-800 duration-200`}>{item.name_simple}</span>
+                <span className={`text-sm font-semibold font-sora group-hover:text-800 duration-200`}>{item.name_simple}</span>
                 <span className="text-xs font-poppins w-[92px]">{item.translated_name.name}</span>
               </div>
-              <span style={{backgroundColor:primary800}} className={`absolute right-[-1em] py-4 px-6 text-white ml-auto font-bold rounded-xl text-base font-arabic z-0`}>{item.name_arabic} </span>
+              <span style={{backgroundColor:theme == "default" ? default800 : primary800}} className={`absolute right-[-1em] py-3 px-4 lg:py-4 lg:px-6 group-hover:px-6 lg:group-hover:px-8 text-white ml-auto font-bold rounded-xl text-sm lg:text-base font-arabic z-0 duration-100 origin-center`}>{item.name_arabic} </span>
             </Link>
           </li>
         )
