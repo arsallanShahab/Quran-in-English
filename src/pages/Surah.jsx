@@ -45,12 +45,12 @@ const Surah = () => {
         </div>
         <div  className="py-5 lg:py-10">
             { (surahName == "al-fatihah") || (data.pagination.current_page !== 1) || (surahName == "at-tawbah") ? "" : <h3 className='text-center text-xl lg:text-3xl font-arabic-text px-3  lg:pt-8 lg:pb-3' style={{color:theme == "default" ? default900 : primary900}}><span>بِسۡمِ</span> <span>اللهِ</span> <span>الرَّحۡمٰنِ</span> <span>الرَّحِيۡمِ</span></h3> }
-            <ul className='px-8 lg:px-20 py-12 flex flex-col flex-wrap gap-y-16' key="ul">
+            <ul className='px-5 lg:px-20 py-12 flex flex-col flex-wrap gap-y-16' key="ul">
                 {data.verses && (
                     data.verses.map((item,index)=>{
                         const words = item.words;
                         return (
-                            <div key={index} className="border relative flex flex-col w-full px-6 lg:px-10 py-8 lg:py-16 rounded-2xl bg-white" 
+                            <div key={index} className="border relative flex flex-col w-full px-3 lg:px-10 py-8 lg:py-16 rounded-2xl bg-white" 
                             style={{backgroundColor:theme == "default" ? default50 : primary50}}
                             >
                                 <div className="absolute top-[-1.5em] left-6 details">
