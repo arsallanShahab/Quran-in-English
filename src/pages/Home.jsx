@@ -1,11 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { default400, default50, default900, primary400, primary50, primary900 } from '../components/colors';
 
 const Home = () => {
 
     const navigate = useNavigate();
     const [theme,setTheme] = useState({theme:"default"});
+    const [read,setRead] = useState({});
+
+    useEffect(()=>{
+      if(!!localStorage.getItem("last-read")){
+        setRead({
+          ...JSON.parse(localStorage.getItem("last-read"))
+        })
+      }
+    },[])
+
     const handleTheme = (e)=>{
       const {handler} = e.target.dataset;
       if(handler == "default"){
@@ -32,6 +42,7 @@ const Home = () => {
     },[])
 
   return (
+    <>
     <div className="relative  h-screen w-full flex flex-col justify-center items-center text-7xl md:text-8xl lg:text-[8em] font-sora font-bold" style={{backgroundColor: theme.theme == "default" ? default50 : primary50}}>
       <span className='cursor-default duration-300' style={{color: theme.theme == "default"  ? default900 : primary900}}>Quran</span> 
       <span className=" font-normal text-xs lg:text-xl mt-[-0.25em] ml-[6.5em] md:ml-[12em] lg:mt-[-.70em] lg:ml-[7.5em] text-center" style={{color:default400}}>with English translation</span>
@@ -44,6 +55,10 @@ const Home = () => {
         </div>
       </div>
     </div>
+    <div className="fixed bottom-10 w-full flex justify-center">
+      {!!localStorage.getItem("last-read") ? <Link className='font-semibold' to={`surahs/surah?number=${read.number}&name=${read.name}&page-number=${read.pageNumber}`}>Go the last surah you read {">"}</Link> : null}
+    </div>
+    </>
   )
 }
 
