@@ -37,7 +37,8 @@ const Surahs = () => {
       {chapters ? chapters.map((item,index)=>{
         return (
           <li className="group list-none text-center flex-grow basis-[300px]" key={index}> 
-            <Link to={`${item.id}/surah-${item.name_simple.toLowerCase()}`} style={{borderColor: theme == "default" ? default200 : primary200}} className={`relative bg-white flex flex-row gap-3 items-center justify-start p-3  lg:p-4 rounded-2xl border-[1px] group-hover:-translate-y-2 group-hover:shadow-lg shadow-current duration-200`}>
+            {/* <Link to={`${item.id}/surah-${item.name_simple.toLowerCase()}`} style={{borderColor: theme == "default" ? default200 : primary200}} className={`relative bg-white flex flex-row gap-3 items-center justify-start p-3  lg:p-4 rounded-2xl border-[1px] group-hover:-translate-y-2 group-hover:shadow-lg shadow-current duration-200`}> */}
+            <Link to={`surah?number=${item.id}&name=surah-${item.name_simple.toLowerCase()}&page-number=1`} style={{borderColor: theme == "default" ? default200 : primary200}} className={`relative bg-white flex flex-row gap-3 items-center justify-start p-3  lg:p-4 rounded-2xl border-[1px] group-hover:-translate-y-2 group-hover:shadow-lg shadow-current duration-200`}>
               <span style={{backgroundColor:theme == "default" ? default200 : primary200,color:theme == "default" ? default800 : primary800}} className={`py-3 px-5 lg:py-4 lg:px-6 rounded-xl text-base lg:text-xl font-bold duration-200`}>{item.id} </span>
               <div className="flex flex-col justify-center-center text-left z-10">
                 <span className={`text-sm font-semibold font-sora group-hover:text-800 duration-200`}>{item.name_simple}</span>
