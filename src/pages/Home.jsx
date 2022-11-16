@@ -56,7 +56,7 @@ const Home = () => {
       </div>
     </div>
     <div className="fixed bottom-10 w-full flex justify-center">
-      {!!localStorage.getItem("last-read") ? <Link className='font-semibold' to={`surahs/surah?number=${read.number}&name=${read.name}&page-number=${read.pageNumber}`}>Go the last surah you read {">"}</Link> : null}
+      {!!localStorage.getItem("last-read") ? <Link className='font-semibold underline' to={`surahs/surah?number=${read.number}&name=${read.name}&page-number=${read.pageNumber}`}>Continue where you left {">"}</Link> : null}
     </div>
     </>
   )
