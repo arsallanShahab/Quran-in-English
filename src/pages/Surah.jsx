@@ -133,11 +133,11 @@ const Surah = () => {
                 style={{backgroundColor:theme == "default" ? default100 : primary100,color:theme == "default" ? default800 : primary800,opacity: (data.pagination.current_page - 1) == 0 ? 0.5 : 1 ,pointerEvents: (data.pagination.current_page - 1) == 0 ? "none": ""}}>
             {`<`}
             </Link> 
-            <Link 
+            <p 
             style={{backgroundColor:theme == "default" ? default100 : primary100,color:theme == "default" ? default800 : primary800}}
             className='py-2 px-4 text-lg border-t border-b border-inherit'>
             {data.pagination.current_page}
-            </Link>
+            </p>
             <Link
                 to={`/surahs/surah?number=${number}&name=${name}&page-number=${data.pagination.next_page}`}
                 className='py-2 px-4 rounded-tr-lg rounded-br-lg text-lg border border-inherit'

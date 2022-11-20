@@ -7,6 +7,8 @@
 *::after {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 @tailwind base;
@@ -27,6 +29,25 @@ body {
 
 .active {
   font-weight: 800;
+}
+
+.backdrop-active {
+  opacity: 0.7;
+  visibility: visible;
+  z-index: 50;
+}
+.backdrop-hidden {
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+}
+.sidebar-active {
+  transform: translateX(0px);
+  z-index: 100;
+}
+.sidebar-hidden {
+  transform: translateX(300px);
+  z-index: 0;
 }
 
 [class*="loader-"] {
