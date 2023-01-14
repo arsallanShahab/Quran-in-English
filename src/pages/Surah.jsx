@@ -80,7 +80,7 @@ const Surah = () => {
       <div className="py-5 lg:py-10">
         <Link
           to={"/surahs"}
-          className="inline-block align-middle text-xl lg:text-5xl font-sora font-bold py-4 px-4 lg:py-6 lg:px-16 capitalize hover:scale-95 hover:-translate-x-3 lg:hover:-translate-x-6 duration-200"
+          className="inline-block align-middle text-xl lg:text-5xl font-sora font-bold py-4 pt-8 px-4 lg:py-6 lg:px-16 capitalize hover:scale-95 hover:-translate-x-3 lg:hover:-translate-x-6 duration-200"
           style={{ color: theme == "default" ? default900 : primary900 }}
         >
           <span className="font-poppins font-semibold">{"<"}</span>
@@ -120,12 +120,12 @@ const Surah = () => {
             className="text-center text-xl lg:text-3xl font-arabic-text px-3 pb-3 lg:pt-8 lg:pb-3"
             style={{ color: theme == "default" ? default900 : primary900 }}
           >
-            <span>بِسۡمِ</span>
+            <span> بِسۡمِ </span>
             <span>اللهِ</span> <span>الرَّحۡمٰنِ</span> <span>الرَّحِيۡمِ</span>
           </h3>
         )}
         <ul
-          className="px-5 lg:px-20 py-12 flex flex-col flex-wrap gap-y-16"
+          className="px-4 lg:px-20 py-12 flex flex-col flex-wrap gap-y-16"
           key="ul"
         >
           {data.verses &&

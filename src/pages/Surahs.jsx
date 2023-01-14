@@ -42,10 +42,10 @@ const Surahs = () => {
       <div className="header py-5 lg:py-6 lg:px-6">
         <Link
           to={"/"}
-          className="back-btn text-gray-600 inline-block font-poppins font-semibold px-4 py-4 rounded-md duration-200"
+          className="back-btn text-xl text-gray-600 inline-block font-sora font-bold px-4 py-4 pt-8 rounded-md duration-200"
           style={{ color: theme == "default" ? default900 : primary900 }}
         >
-          {"<"} Back
+          <span className="font-poppins font-semibold">{"<"}</span>Back
         </Link>
         <h1
           className="font-sora font-bold pt-8 lg:pt-16 pb-5 text-4xl lg:text-7xl text-center"
